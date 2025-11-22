@@ -1,1 +1,2 @@
-// full js inserted here
+
+document.addEventListener('DOMContentLoaded',()=>document.body.classList.add('fade-in'));
