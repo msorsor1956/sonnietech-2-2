@@ -1,1 +1,247 @@
-<!DOCTYPE html><html><body><h1>Home – Sonnies Technology</h1><p>Hero, van, sections here.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sonnies Technology LLC – Home</title>
+
+<!-- SEO -->
+<meta name="description" content="Sonnies Technology LLC – Electronics Sales, IT Support, Device Repair, and Medical Equipment Delivery in Indianapolis, IN." />
+<meta name="keywords" content="IT Services, Electronics Repair, Medical Delivery, Device Support, Indianapolis" />
+<meta name="author" content="Sonnies Technology LLC" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/favor.png" />
+<link rel="apple-touch-icon" href="assets/favor.png" />
+
+<!-- Page Fade -->
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { 
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", Arial;
+    background:#fafafa;
+    color:#222;
+    opacity:0;
+    transition:opacity .7s ease;
+}
+body.page-loaded { opacity:1; }
+
+/* HEADER */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:#fff;
+    box-shadow:0 2px 20px rgba(0,0,0,0.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+header img.logo {
+    height:58px;
+}
+
+nav ul {
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+nav a {
+    text-decoration:none;
+    font-size:18px;
+    color:#222;
+    font-weight:500;
+    transition:0.3s;
+}
+nav a:hover { color:#007aff; }
+
+/* MOBILE MENU */
+.mobile-toggle {
+    display:none;
+    font-size:34px;
+    cursor:pointer;
+}
+@media(max-width:820px){
+    nav ul { display:none; flex-direction:column; background:#fff; padding:25px; }
+    nav ul.active { display:flex; }
+    .mobile-toggle { display:block; }
+}
+
+/* HERO */
+.hero {
+    padding:80px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+.hero-text h1 {
+    font-size:50px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+.hero-text p {
+    font-size:20px;
+    color:#444;
+    margin-bottom:28px;
+}
+.hero-buttons button {
+    padding:15px 26px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    margin-right:12px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.btn-blue { background:#007aff; color:#fff; }
+.btn-blue:hover { background:#0066d6; }
+.btn-light { background:#eaeaea; }
+.btn-light:hover { background:#d5d5d5; }
+
+.hero img {
+    width:48%;
+    border-radius:20px;
+    box-shadow:0 4px 26px rgba(0,0,0,0.12);
+}
+
+/* SECTIONS */
+.section {
+    padding:80px 40px;
+    animation:fadeInUp .8s ease;
+}
+.section h2 {
+    font-size:36px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+.section p {
+    font-size:20px;
+    line-height:1.6;
+}
+
+/* FOOTER */
+footer {
+    margin-top:60px;
+    background:#111;
+    color:#eee;
+    padding:50px 40px;
+    text-align:center;
+}
+footer img {
+    height:70px;
+    margin-bottom:18px;
+}
+footer .social a {
+    margin:0 12px;
+    font-size:24px;
+    color:#fff;
+    text-decoration:none;
+}
+footer p {
+    margin-top:20px;
+    font-size:16px;
+}
+</style>
+
+<!-- SCROLL ANIMATIONS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("page-loaded");
+
+    const reveal = () => {
+        const reveals = document.querySelectorAll(".section");
+        for (let sec of reveals) {
+            const rect = sec.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 120) {
+                sec.style.opacity = 1;
+                sec.style.transform = "translateY(0)";
+            }
+        }
+    };
+    window.addEventListener("scroll", reveal);
+    reveal();
+});
+</script>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+function toggleMenu(){
+    document.querySelector("nav ul").classList.toggle("active");
+}
+</script>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-03FLYR2JDF"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-03FLYR2JDF');
+</script>
+
+</head>
+<body>
+
+<header>
+    <img src="assets/logo3d.png" class="logo" alt="Sonnies Technology Logo">
+    
+    <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO BANNER -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Your Trusted Technology Partner</h1>
+        <p>We provide IT services, device repair, electronics sales, and medical equipment delivery throughout Indianapolis.</p>
+
+        <div class="hero-buttons">
+            <button class="btn-blue" onclick="window.location='services.html'">View Services</button>
+            <button class="btn-light" onclick="window.location='contact.html'">Contact Us</button>
+        </div>
+    </div>
+
+    <img src="assets/van.png" alt="Sonnies Technology Van">
+</section>
+
+<!-- SECTION 1 -->
+<div class="section" style="opacity:0; transform:translateY(80px);">
+    <h2>Why Choose Sonnies Technology?</h2>
+    <p>
+        Reliable support, fast repairs, trusted delivery, and professional services.  
+        We proudly serve Indianapolis businesses, families, and medical facilities.
+    </p>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" style="opacity:0; transform:translateY(80px);">
+    <h2>Our Mission</h2>
+    <p>
+        To deliver world-class technology services with integrity, innovation, and excellence.
+    </p>
+</div>
+
+<footer>
+    <img src="assets/logo3d.png" alt="Footer Logo">
+    <div class="social">
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+    </div>
+    <p>© 2025 Sonnies Technology LLC – Indianapolis, IN</p>
+</footer>
+
+</body>
+</html>
